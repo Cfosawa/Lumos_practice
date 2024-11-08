@@ -16,6 +16,10 @@ header ul li{
     list-style: none;
     margin: 10px;
 }
+header .onlne_shop{
+    display: flex;
+    border: 1px solid #333;
+}
 .topphoto{
     max-width: 100%;
     height: auto;
