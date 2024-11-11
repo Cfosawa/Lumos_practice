@@ -43,13 +43,15 @@ header .logo{
     color: #62534D;
 }
 .head_items .sns{
-    margin: 10px 8px;
+    margin: auto 8px;
 }
 .onlne_shop{
     display: flex;
     border: 1px solid #62534D;
-    padding: 12px 24px 10px 22px;
+    padding: 12px 24px 12px 22px;
     margin-left: 30px;
+    margin: auto;
+    margin-left: 22px;
 }
 .onlne_shop p{
     margin: 0 8px 0 0;
