@@ -6,6 +6,16 @@
     <link rel="stylesheet" href="css/style.css"/>
     <meta name="viewport" content="width=device-width"/>
     <title>Lumos_practice</title>
+    <script>
+        (function(d) {
+          var config = {
+            kitId: 'kyh1lsq',
+            scriptTimeout: 3000,
+            async: true
+          },
+          h=d.documentElement,t=setTimeout(function(){h.className=h.className.replace(/\bwf-loading\b/g,"")+" wf-inactive";},config.scriptTimeout),tk=d.createElement("script"),f=false,s=d.getElementsByTagName("script")[0],a;h.className+=" wf-loading";tk.src='https://use.typekit.net/'+config.kitId+'.js';tk.async=true;tk.onload=tk.onreadystatechange=function(){a=this.readyState;if(f||a&&a!="complete"&&a!="loaded")return;f=true;clearTimeout(t);try{Typekit.load(config)}catch(e){}};s.parentNode.insertBefore(tk,s)
+        })(document);
+      </script>
 
 </head>
 
@@ -17,14 +27,14 @@
             </div>
             <nav class="head_items">
                 <ul class="head_list">
-                    <li><a href="#ALL ITEMS">ALL ITEMS</a></li>
-                    <li><a href="#BLUE LIGHT SAVE">BLUE LIGHT SAVE</a></li>
-                    <li><a href="#MONTHLY">MONTHLY</a></li>
-                    <li><a href="#YUKOS">YUKOS</a></li>
+                    <a href="#ALL ITEMS"><li>ALL ITEMS</li></a>
+                    <a href="#BLUE LIGHT SAVE"><li>BLUE LIGHT SAVE</li></a>
+                    <a href="#MONTHLY"><li>MONTHLY</li></a>
+                    <a href="#about_yukos"><li>YUKOS</li></a>
                 </ul>
                 <div class="sns">
-                    <img src="img/instagram.png" width="22" alt="インスタグラム">
-                    <img src="img/twitter.png" width="24" height="20" alt="ツイッター">
+                    <a href="https://www.instagram.com/yukos0520?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="><img src="img/instagram.png" width="22" alt="インスタグラム"></a>
+                    <a href="https://x.com/ChusmeOfficial"><img src="img/twitter.png" width="24" height="20" alt="ツイッター"></a>
                 </div>
                 <div class="onlne_shop">
                     <p>ONLINE SHOP</p>
@@ -172,7 +182,7 @@
                 <img src="img/point.png" alt="レンズスペック">
             </div>
         </section><!--ここまでモテカラ-->
-        <section class="about_yukos"><!--ここからゆうこす-->
+        <section id="about_yukos" class="about_yukos"><!--ここからゆうこす-->
             <div class="yukos_img">
                 <img src="img/pl_img.png" alt="ゆうこすの画像">
             </div>
@@ -180,12 +190,12 @@
                 <img src="img/pl_text.png" alt="ゆうこすの文章">
             </div>
             <div class="sns">
-                <img src="img/instagram.png" alt="インスタのアイコン">
-                <img src="img/twitter.png" alt="Xのアイコン">
-                <img src="img/youtube.png" alt="ユーチューブのアイコン">
+                <a href="https://www.instagram.com/yukos0520?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="><img src="img/instagram.png" alt="インスタのアイコン"></a>
+                <a href="https://x.com/ChusmeOfficial"><img src="img/twitter.png" alt="Xのアイコン"></a>
+                <a href="https://www.youtube.com/channel/UCxS4vbIvtjHQcEW61J2KQIw"><img src="img/youtube.png" alt="ユーチューブのアイコン"></a>
             </div>
-
         </section><!--ここまでゆうこす-->
+
         <section class="information"><!--ここからインフォメーション-->
             <div class="information_information">
                 <div class="title">
@@ -202,8 +212,9 @@
                     </dl> 
                 </div>
             </div>
-        </section>
-        <footer>
+        </section><!--ここまでインフォメーション-->
+
+        <footer><!--フッター-->
             <div class="attention">
                 <p>■コンタクトレンズは高度管理医療機器です。取り扱い方法を守り正しくご使用ください。■眼科医院等にて検査を受けてからお求めください。■眼に異常を感じたら直ちにレンズ使用を中止し、お近くの眼科等で検査を受診してください。■ご使用の前に必ず添付文書をお読みください。■高度管理医療機器等販売業許可証：2渋健生薬948号</p>
             </div>
@@ -215,7 +226,7 @@
             <div class="copylight">
                 <p>Copyright©2024 T-Garden Co., Ltd. All rights reserved</p>
             </div>
-        </footer>
+        </footer><!--ここまでフッター-->
 
     </section>
 </body>

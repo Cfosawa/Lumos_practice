@@ -1,14 +1,16 @@
 /*iPhone*/
 h1, h2, h3, p, dl ,li{
-    font-family: heisei-maru-gothic-std, sans-serif;
+    font-family: "hiragino-kaku-gothic-pron", sans-serif;
+    font-weight: 300;
+    font-style: normal;
     color: #62534D;
 }
 h3{
     font-size: 20px;
     letter-spacing: 0.1em;
-    font-weight: lighter;
+    font-weight: normal;
 }
-p, li{
+p, li, dl{
     font-size: 14px;
     letter-spacing: 0.1em;
 }
@@ -47,7 +49,7 @@ header .logo{
     font-size: 14px;
     letter-spacing: 0.1em;
 }
-.head_items ul li a{
+.head_items ul a{
     text-decoration: none;
     color: #62534D;
 }
@@ -68,22 +70,24 @@ header .logo{
 
 /*------ホーム--------*/
 .home{
-    background-color: aliceblue;
-    width: 100%;
-    height: 694px;
+    background-image: url(../img/top_pc.jpg);
+    height: 680px;
+    background-size: 110%;
+    background-repeat: no-repeat;
+    background-position: top center;
     position: relative;
     margin: 0;
 }
 .home img{
     position: absolute;
-    left: 190px;
+    left: 100px;
     top: 88px;
 }
 /*------新商品--------*/
 .new{
     width: 100%;
     height: 1830px;
-    background-color: whitesmoke;
+    background-image: url(../img/new_bk.jpg);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -129,7 +133,7 @@ header .logo{
 .two_new .gross_brown{
     width: 100%;
     height: 1806px;
-    background-color: #EBD8D1;
+    background-image: url(../img/bk_gloss.jpg);
     margin: 0;
     margin: 0px auto;
     display: flex;
@@ -139,7 +143,7 @@ header .logo{
 .two_new .tear_olive{
     width: 100%;
     height: 1832px;
-    background-color: #EFF0E2;
+    background-image: url(../img/bk_tear.jpg);
     margin: 0;
     margin: 0px auto;
     display: flex;
@@ -175,18 +179,20 @@ header .logo{
 .color_variation{
     width: 100%;
     height: 1600px;
-    background-color: aliceblue;
+    background-image: url(../img/lu_bk_pc.jpg);
     display: flex;
     flex-direction: column;
     align-items: center;    
 }
-.color_variation .title img, .color_variation .spec img{
+.color_variation .title img{
     width: 440px;
     height: auto;
     margin-top: 50px;
 }
 .color_variation .spec img{
-    margin-top: 20px;
+    width: 500px;
+    height: auto;
+    margin-top: 60px;
 }
 
 .color_variation .items .new_item {
@@ -205,6 +211,7 @@ header .logo{
     justify-content: center;
     column-gap: 10px;
 }
+
 .color_variation .items .new_item img{
     width: 316px;
     height: auto;
@@ -218,11 +225,13 @@ header .logo{
     font-size: 12px;
     border: 1px solid #62534D;
     padding: 22px 0;
+    margin: 0 16px 0 36px;
 }
 .nomal_item .more{
     font-size: 12px;
     border: 1px solid #62534D;
     padding: 16px 0;
+    margin: 0 26px;
 }
 
 /*------ここからモテカラー--------*/
@@ -259,9 +268,9 @@ header .logo{
 /*------ここからゆうこすー--------*/
 
 .about_yukos {
-    width: 100%;
     height: 1058px;
-    background-color: #E0EAF1;
+    background-image: url(../img/pl_bk.jpg);
+    background-size: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;    
@@ -271,7 +280,7 @@ header .logo{
 }
 .yukos_text{
     margin-top: 30px;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
 }
 .yukos_img img{
     width: 412px;
@@ -285,6 +294,7 @@ header .logo{
     width: 32px;
     height: auto;
     margin: 8px;
+    
 }
 
 /*------ここからインフォメーションー--------*/
