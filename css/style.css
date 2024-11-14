@@ -1,9 +1,14 @@
 /*iPhone*/
-h1, h2, p {
+h1, h2, h3, p, dl ,li{
     font-family: heisei-maru-gothic-std, sans-serif;
     color: #62534D;
 }
-p{
+h3{
+    font-size: 20px;
+    letter-spacing: 0.1em;
+    font-weight: lighter;
+}
+p, li{
     font-size: 14px;
     letter-spacing: 0.1em;
 }
@@ -13,12 +18,12 @@ body{
 
 /*------共通設定--------*/
 .main_width{
-    width: 1440px;
+    width: 1474px;
 }
 /*------ヘッダー--------*/
 header{
     position: relative;
-    background-color: antiquewhite;
+    background-color:#F8EFEE;
     display: flex;
     width: 100%;
     height: 76px;  
@@ -120,7 +125,7 @@ header .logo{
     width: 520px;
     height: auto;
 }
-
+/*------2つの新商品詳細--------*/
 .two_new .gross_brown{
     width: 100%;
     height: 1806px;
@@ -158,10 +163,192 @@ header .logo{
     height: auto;
     margin-top: -30px;
 }
-
 .two_new p{
     font-size: 12px;
     border: 1px solid #62534D;
     padding: 20px 170px;
     margin-top: 6px;
+}
+
+/*------カラバリ--------*/
+
+.color_variation{
+    width: 100%;
+    height: 1600px;
+    background-color: aliceblue;
+    display: flex;
+    flex-direction: column;
+    align-items: center;    
+}
+.color_variation .title img, .color_variation .spec img{
+    width: 440px;
+    height: auto;
+    margin-top: 50px;
+}
+.color_variation .spec img{
+    margin-top: 20px;
+}
+
+.color_variation .items .new_item {
+    display: grid;
+    grid-template-columns: repeat(2, 300px); 
+    text-align: center;
+    justify-content: center;  
+    gap: 10px;
+    margin-top: 40px;
+}
+
+.color_variation .items .nomal_item {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    text-align: center;
+    justify-content: center;
+    column-gap: 10px;
+}
+.color_variation .items .new_item img{
+    width: 316px;
+    height: auto;
+}
+.color_variation .items .nomal_item img{
+    width: 260px;
+    height: auto;
+    margin-top: 10px;
+}
+.new_item .more{
+    font-size: 12px;
+    border: 1px solid #62534D;
+    padding: 22px 0;
+}
+.nomal_item .more{
+    font-size: 12px;
+    border: 1px solid #62534D;
+    padding: 16px 0;
+}
+
+/*------ここからモテカラー--------*/
+
+.mote_color{
+    width: 100%;
+    height: 1790px;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;    
+}
+.mote_color .title{
+    margin-top: 114px;
+    margin-bottom: 38px;
+}
+.mote_color .lens_spec{
+    margin-top: 120px;
+}
+.mote_color .title img{
+    width: 416px;
+    height: auto;
+    margin-top: 114px auto;
+}
+.mote_color .color_chart img{
+    width: 620px;
+    height: auto;
+}
+.mote_color .lens_spec img{
+    width: 526px;
+    height: auto;
+}
+
+/*------ここからゆうこすー--------*/
+
+.about_yukos {
+    width: 100%;
+    height: 1058px;
+    background-color: #E0EAF1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;    
+}
+.yukos_img{
+    margin-top: 40px;
+}
+.yukos_text{
+    margin-top: 30px;
+    margin-bottom: 10px;
+}
+.yukos_img img{
+    width: 412px;
+    height: auto;
+}
+.yukos_text img{
+    width: 324px;
+    height: auto;
+}
+.about_yukos .sns img{
+    width: 32px;
+    height: auto;
+    margin: 8px;
+}
+
+/*------ここからインフォメーションー--------*/
+
+.information {
+    width: 100%;
+    height: 256px;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;    
+}
+.information .title h3{
+    margin-top: 70px;
+    margin-right: 840px;
+    position: relative;
+}
+.information .title h3::after{
+    position: absolute;
+    content: "";
+    top: 50%;
+    width: 810px;
+    height: 1px;
+    background-color: #62534D;
+    margin-left: 20px;
+}
+
+.information_news dl{
+    display: flex;
+}
+
+/*------footerー--------*/
+footer{
+    width: 100%;
+    height: 140px;
+    background-color: #F3DEDF;
+    padding-top: 4px;
+}
+footer .attention{
+    margin: 0 20px;
+}
+footer ul{
+    display: flex;
+    justify-content: end;
+    
+}
+footer ul li{
+    list-style: none;
+    margin: 0 20px 0 10px;
+    position: relative;
+}
+footer ul li::after{
+    position: absolute;
+    content: "";
+    width: 1px;
+    height: 18px;
+    background-color: #62534D;
+    margin-left: 14px;
+}
+footer ul li:last-child:after{
+    display: none;
+}
+footer .copylight p{
+    display: flex;
+    justify-content: end;
+    margin-right: 4px;
 }
