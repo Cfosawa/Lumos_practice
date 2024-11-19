@@ -54,25 +54,48 @@ header .logo{
     color: #62534D;
 }
 .head_items .sns{
-    margin: auto 8px;
+    margin: 24px 8px;
 }
-.onlne_shop{
+
+
+
+.onlne_official{
     display: flex;
     border: 1px solid #62534D;
     padding: 12px 24px 12px 22px;
-    margin-left: 30px;
-    margin: auto;
     margin-left: 22px;
+    margin-top: 16px;
 }
-.onlne_shop p{
+.onlne_official p{
     margin: 0 8px 0 0;
 }
+
+.online_sub{
+    display: none;
+    margin-top: -10px;
+}
+
+.online_shop:hover {
+    border: 1px solid #62534D;
+    text-align: center;
+    margin-left: 22px;
+    margin-top: 16px;
+}
+.online_shop:hover .onlne_official{
+    border: none;
+    margin: 0;
+}
+.online_shop:hover .online_sub{
+    display: block;
+    
+}
+
 
 /*------ホーム--------*/
 .home{
     background-image: url(../img/top_pc.jpg);
-    height: 680px;
-    background-size: 110%;
+    height: 700px;
+    background-size: 114%;
     background-repeat: no-repeat;
     background-position: top center;
     position: relative;
@@ -93,7 +116,7 @@ header .logo{
     align-items: center;
 }
 .new_items{
-    margin: 50px auto 10px auto;
+    margin: 80px auto 0px auto;
 }
 .new_items p{
     font-size: 12px;
@@ -102,10 +125,10 @@ header .logo{
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-bottom: 9px;
+    margin-bottom: 6px;
 }
 .new_items img{
-    margin-bottom: 20px;
+    margin-bottom: 10px;
 }
 .new figure{
     margin-bottom: 50px;   
@@ -129,6 +152,7 @@ header .logo{
     width: 520px;
     height: auto;
 }
+
 /*------2つの新商品詳細--------*/
 .two_new .gross_brown{
     width: 100%;
@@ -167,12 +191,16 @@ header .logo{
     height: auto;
     margin-top: -30px;
 }
-.two_new p{
+.two_new .more{
     font-size: 12px;
     border: 1px solid #62534D;
     padding: 20px 170px;
     margin-top: 6px;
 }
+.two_new a{
+    text-decoration: none;
+}
+
 
 /*------カラバリ--------*/
 
@@ -187,7 +215,7 @@ header .logo{
 .color_variation .title img{
     width: 440px;
     height: auto;
-    margin-top: 50px;
+    margin-top: 70px;
 }
 .color_variation .spec img{
     width: 500px;
@@ -233,6 +261,10 @@ header .logo{
     padding: 16px 0;
     margin: 0 26px;
 }
+.color_variation a{
+    text-decoration: none;
+}
+
 
 /*------ここからモテカラー--------*/
 
@@ -346,15 +378,22 @@ footer ul li{
     margin: 0 20px 0 10px;
     position: relative;
 }
-footer ul li::after{
+footer ul a{
+    text-decoration: none;
+    position: relative;
+}
+footer ul a::after{
     position: absolute;
     content: "";
     width: 1px;
     height: 18px;
     background-color: #62534D;
-    margin-left: 14px;
+    margin-top: -20px;
+    left: -6px; 
+    top: 100%;
+    
 }
-footer ul li:last-child:after{
+footer ul a:first-child::after{
     display: none;
 }
 footer .copylight p{
@@ -362,3 +401,40 @@ footer .copylight p{
     justify-content: end;
     margin-right: 4px;
 }
+
+/*------白っぽくなるアニメーションー--------*/
+
+.all_items, .blue_light_save, .monthly, #yukos, .instagram, .twitter, .youtube, .information_news1, .information_news2, .beware, .contact, .privacy_policy{
+    transition: 0.3s;
+    cursor: pointer;
+    user-select: none;
+}
+
+.all_items:hover, .blue_light_save:hover, .monthly:hover, #yukos:hover,
+.instagram:hover, .twitter:hover, .youtube:hover, .information_news1:hover, .information_news2:hover, .beware:hover, .contact:hover, .privacy_policy:hover{
+    transition: 0.3s; 
+    opacity: 0.6; 
+    transition: 0.6s ease; 
+}
+
+.new_item1_img, .new_item2_img, .item01_img, .item02_img, .item03_img, .item04_img, .item05_img, .item06_img, .item07_img, .item08_img, .item09_img, .item10_img, .item11_img{
+    transition: 0.3s;
+}
+
+.new_item1_img:hover, .new_item2_img:hover,
+ .item01_img:hover, .item02_img:hover, .item03_img:hover, .item04_img:hover, .item05_img:hover, .item06_img:hover, .item07_img:hover, .item08_img:hover, .item09_img:hover, .item10_img:hover, .item11_img:hover{
+    transition: 0.3s; 
+    opacity: 0.8; 
+    transition: 0.4s ease; 
+}
+/*------moreアニメーション--------*/
+
+.more:hover{
+    border:none;
+    border: 1px solid #fff;
+    background-color: #fff;
+    transform: scale(1.1);
+    transition: 0.6s;
+    opacity: 1;
+}
+
