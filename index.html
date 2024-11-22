@@ -26,6 +26,11 @@
             <div class="logo">
                 <a href="../Lumos_practice/index.html"><img src="img/logo.png" width="130"  alt="チューズミーロゴ"></a>
             </div>
+            <div id="hamburger_btn" class="hamburger_btn">
+                <div class="hamburger_btn_top"></div>
+                <div class="hamburger_btn_mid"></div>
+                <div class="hamburger_btn_bottom"></div>
+            </div>
             <nav class="head_items">
                 <ul class="head_list">
                     <a href="https://chusme.jp/item"><li class="all_items">ALL ITEMS</li></a>
@@ -49,10 +54,12 @@
                     </div>
                 </div>
             </nav>
+         
         </header>
         <section class="home"><!--ホーム-->
             <img src="img/debut.png" width="464" height="484" alt="メイン">
         </section><!--ここまでホーム-->
+
 
         <section class="new"><!--新商品-->
             <div class="new_items">
@@ -237,6 +244,62 @@
             </div>
         </footer><!--ここまでフッター-->
 
+        <!--ハンバーガー！ー-->
+        
+        <section id="hamburger_menu_sp">
+            <nav id="head_items" class="head_items">
+                <ul class="head_list">
+                    <a href="https://chusme.jp/item"><li class="all_items">ALL ITEMS</li></a>
+                    <a href="https://chusme.jp/blue_light_save"><li class="blue_light_save">BLUE LIGHT SAVE</li></a>
+                    <a href="https://chusme.jp/1month"><li class="monthly">MONTHLY</li></a>
+                    <a href="#about_yukos"><li id="yukos">YUKOS</li></a>
+                </ul>
+                <div class="sns">
+                    <a href="https://www.instagram.com/yukos0520?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==">
+                        <img class="instagram" src="img/instagram.png" alt="Instagram">
+                    </a>
+                    <a href="https://x.com/ChusmeOfficial">
+                        <img class="twitter" src="img/twitter.png" alt="Twitter">
+                    </a>
+                </div>
+                <div class="online_shop">
+                    <div class="onlne_official">
+                        <p>ONLINE SHOP</p>
+                        <img src="img/cart.png" width="20" height="18" alt="カートのアイコン">
+                    </div>
+                    <div class="online_sub">
+                        <p class="more_contact">MORECONTACT</p>
+                        <p class="rakuten">RAKUTEN</p>
+                        <p class="hoteraba">ホテラバ</p>
+                    </div>
+                </div>
+            </nav>
+            
+        </section>
+        <!--ここまでハンバーガー！ー-->
+
     <div id="wrapper">
+
+    <!-- JS -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(function () {
+            $('#hamburger_btn').click(function () {
+                console.log('ハンバーガーボタンがクリックされました');
+
+
+                $('#hamburger_btn').toggleClass('active');
+
+
+                $('#hamburger_menu_sp').toggleClass('open');
+                $('#head_items').toggleClass('open');
+
+
+
+                $('body').toggleClass('no-scroll');
+            });
+        });
+    </script>
+    
 </body>
 </html>

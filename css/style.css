@@ -56,9 +56,12 @@ header{
     align-items: center;  
 }
 
+
 header .logo{
     margin: auto 0;
 }
+
+
 .head_items{
     display: flex;
     position: fixed;
@@ -474,26 +477,25 @@ footer .copylight p{
 /*iPhone*/
 
 @media only screen and (max-width:768px){
-    
     h3{
         font-size: 14px;
     }
     p, li, dl{
         font-size: 8px;
     }
-    body {
+    html, body {
         overflow-x: hidden; /* 横スクロールを防止 */
+        
     }
     
 
-    * {
-        outline: 1px solid red; /* 境界線を表示して問題の特定を助ける */
-    }
+    
     #wrapper {
         max-width: 100%;
         margin: 0 auto; /* ページを中央に揃える */
         
     }
+    
 
     /*------ヘッダー--------*/
     header{
@@ -506,17 +508,74 @@ footer .copylight p{
     header .logo{
         margin: auto 0;
     }
-    .head_items{
-        display:none
-    }
-    .head_items ul{  
+
+    
+    /*-----ハンバーガーメニューの中身--------*/
+    
+
+    .hamburger_btn {
+        position: fixed;
+        top: 4%; 
+        right: 4%; 
+        width: 7%; 
         display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: flex-start;
+        height: 4%; 
+        z-index: 9999;
+        
     }
+    .hamburger_btn div {
+        height: 1px; 
+        background-color: #62534D;
+    }
+    .hamburger_btn_top,
+    .hamburger_btn_bottom {
+        width: 100%; 
+    }
+    .hamburger_btn_mid {
+        width: 70%; 
+        align-self: flex-start; 
+    }
+    
+    #hamburger_menu_sp {
+        display: block;
+        position: fixed;
+        background-color: white;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        right: 0;
+        z-index: 99999999;
+        flex-direction: column;
+        align-items: center;
+        transition: transform 0.6s ease-in-out, opacity 0.3s ease-in-out;
+        transform: translateY(-100%); 
+        opacity: 0;
+    }
+    
+    #hamburger_menu_sp.open {
+        opacity: 1; 
+        transform: translateY(0); 
+    }
+
+    .head_items{
+        display: none;
+        z-index: 9999999999999999;
+    }
+    .head_items.open{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
     .head_items ul li{
         list-style: none;
         margin: 10px 22px;
         font-size: 14px;
         letter-spacing: 0.1em;
+        
     }
     .head_items ul a{
         text-decoration: none;
@@ -556,19 +615,23 @@ footer .copylight p{
     .online_shop:hover .online_sub{
         display: block;
         
-    }
+    } 
+
+
+
+
 
 
     /*------ホーム--------*/
     .home{
         background-image: url(../img/top_sp.jpg);
         background-repeat: no-repeat;
-        background-position: center;
         background-size: cover; /* 画面幅にフィットさせる */
         width: 100%;
-        height: 100vh;
-        display: flex;
-        align-items: flex-end;
+        margin: auto;
+        position: relative;
+        transition: 1s;
+        padding-top: 175%;
         }
    
    
@@ -584,6 +647,7 @@ footer .copylight p{
         flex-direction: column;
         align-items: center;
         margin-top: 10px;
+        padding-bottom: 34%;
     }
     .new_items{
         margin: 0px auto 0px auto;
@@ -597,28 +661,19 @@ footer .copylight p{
         align-items: center;
         margin-bottom: 6px;
     }
-    .new_items img {
-        margin: 0 auto; /* img を中央揃え */
-        width: 90%; /* 必要に応じて幅を調整 */
-        height: auto;
-        display: block; /* インライン特性をリセットして中央揃え */
-    }
-    .new figure img{
-        margin-bottom: 0px;
-        width: 120%;
-        height: auto;
-    }
+    
+    
     .new figure {
-        position: relative; /* 画像の位置を制御するために相対配置を指定 */
-        width: 100%; /* 親要素幅に合わせる */  
+       
+        width: 100%; 
     }
     
     .new figure img {
         position: relative; /* 自由な配置を可能に */
         margin-bottom: 0;
-        width: 120%; /* 通常幅の120%に拡大 */
-        height: auto; /* アスペクト比を維持 */
-        left: -20%; /* 中心から左右にはみ出すように調整 */
+        width: 140%; 
+        height: auto; 
+        left: -20%; 
     }
     .new video{
         width: 90%;
@@ -626,37 +681,38 @@ footer .copylight p{
     }
 
     /*------ポイント--------*/
-    .point{
+
+    
+    .point {
         width: 100%;
-        height: 40%;
+        height: auto;
         background-color: #EFE3E3;
         display: flex;
         flex-direction: column;
         align-items: center;
         position: relative;
-        margin-top: -300px;
     }
-
+    
     .point::before {
         background-image: url(../img/de_top.png);
-        background-size: contain; /* 幅または高さにフィット */
-        background-repeat: no-repeat; /* 繰り返さない */
-        background-position: top center; /* 中央揃え */
+        background-size: contain; 
+        background-repeat: no-repeat; 
         position: absolute; 
-        top: -170px;
-        left: 0;
         content: ""; 
         width: 100%; 
         height: auto; 
         padding-top: 100%; 
+        top: -10%;
     }
-
+    
 
     .point_contents{
-        margin: 64px auto;
+        margin: 10% auto;  
     }
+    
+
     .point_design{
-        margin: 50px auto;
+        margin: 40px auto;
     }
     .point_design img{
         width: 90%;
@@ -677,6 +733,11 @@ footer .copylight p{
         display: block; /* インライン要素の特性をリセット */
     }
 
+    
+    
+    
+    
+   
     
 
     /*------2つの新商品詳細--------*/
@@ -702,20 +763,31 @@ footer .copylight p{
     }
 
     .two_new .name img{
-        width: 90%;
+        width: 100%;
         height: auto;
         margin-top: 60px;
         display: block;
-        margin: 0 auto;
+        margin: 10% auto 0 auto;
+
+    }
+    .two_new .top{
+        width: 100%;
+        height: auto;
+        right: 10%;
     }
 
     .two_new .top img{
-        width: 90%;
-        height: auto;
-        margin-top: 20px;
-        display: block;
-        margin: 0 auto;
+        position: relative; 
+        margin-bottom: 0;
+        width: 140%; 
+        height: auto; 
+        left: -20%;  
     }
+    .two_new .spec, .mote_point{
+        width: 100%;
+        height: auto;
+    }
+
     .two_new .spec img, .mote_point img{
         width: 90%;
         height: auto;
@@ -723,11 +795,29 @@ footer .copylight p{
         display: block;
         margin: 0 auto;
     }
+    
     .two_new .more{
-        font-size: 12px;
+        font-size: 9px;
         border: 1px solid #62534D;
-        padding: 20px 170px;
-        margin-top: 6px;
+        display: block;
+        margin: 0 auto 10% auto;
+        padding: 2em 16em;
+        position: relative;
+    }
+    .two_new .more::after{
+        content: ' ';
+        position: absolute;
+        top: 42%;
+        left: 90%;
+        display: block;
+        width: 6px;
+        height: 6px;
+        border: 0px;
+        border-top: solid 1px #62534D;
+        border-right: solid 1px #62534D;
+        transform: rotate(45deg);
+        -ms-transform: rotate(45deg);
+        -webkit-transform: rotate(45deg);
     }
     .two_new a{
         text-decoration: none;
@@ -744,6 +834,7 @@ footer .copylight p{
         background-size: contain;
         background-repeat: no-repeat;
         padding-top: 20%;
+        display: block;
     }
 
     
@@ -751,17 +842,10 @@ footer .copylight p{
     .color_variation .title img{
         width: 90%;
         height: auto;
-        
         display: block;
         margin: 0 auto;
     }
-    .color_variation .spec img{
-        width: 90%;
-        height: auto;
-        margin-top: 90px;
-        display: block;
-        margin: 0 auto;
-    }
+    
     
     .color_variation .items{
         display: block;
@@ -777,7 +861,10 @@ footer .copylight p{
         justify-content: center;  
         gap: 10px;
         margin-top: 40px;
-        max-width: 90%;  
+        
+    }
+    .color_variation .items .new_item{
+        margin-bottom: -6%;
     }
     
 
@@ -789,14 +876,23 @@ footer .copylight p{
     
     .new_item .more,
     .nomal_item .more{
-        font-size: 12px;
+        font-size: 9px;
         border: 1px solid #62534D;
-        padding: 20px 0;
-        margin: 0 16px 0 16px;
+        display: block;
+        margin: 0 auto 2% auto;
+        padding: 1em 4em;
     }
     
     .color_variation a{
         text-decoration: none;
+    }
+
+    .color_variation .spec img{
+        width: 90%;
+        height: auto;
+        display: block;
+        margin: 0 auto;
+        margin-top: 6%;
     }
 
 
@@ -804,15 +900,15 @@ footer .copylight p{
 
     .mote_color{
         width: 100%;
-        height: 1790px;
+        height: auto;
         background-color: #fff;
         display: flex;
         flex-direction: column;
         align-items: center;    
     }
     .mote_color .title{
-        margin-top: 40px;
-        margin-bottom: 40px;
+        margin-top: 10%;
+        margin-bottom: 10%;
         
     }
     .mote_color .lens_spec{
@@ -821,7 +917,7 @@ footer .copylight p{
     .mote_color .title img{
         width: 90%;
         height: auto;
-        margin-top: 114px auto;
+        margin: 10% auto;
         display: block;
         margin: 0 auto;
     }
@@ -836,148 +932,222 @@ footer .copylight p{
         height: auto;
         display: block;
         margin: 0 auto;
+        margin-bottom: 10%;
     }
 
     /*------ここからゆうこすー--------*/
 
     .about_yukos {
-        height: 1058px;
+        height: auto;
         background-image: url(../img/pl_bk.jpg);
-        background-size: 100%;
-        display: flex;
-        flex-direction: column;
-        align-items: center;    
+        background-size: cover;
+        background-repeat: no-repeat;
+       
+
     }
     .yukos_img{
-        margin-top: 40px;
+        margin-top: 10%;
     }
     .yukos_text{
-        margin-top: 30px;
-        margin-bottom: 20px;
+        margin-top: 10%;
+        margin-bottom: 10%;
     }
     .yukos_img img{
-        width: 412px;
+        width: 98%;
         height: auto;
+        display: block;
+        margin: 0 auto;
     }
     .yukos_text img{
-        width: 324px;
+        width: 90%;
         height: auto;
+        display: block;
+        margin: 0 auto;
+    }
+    .about_yukos .sns{
+        width: 50%;
+        text-align: center;
     }
     .about_yukos .sns img{
-        width: 32px;
+        width: 10%;
         height: auto;
-        margin: 8px;
-        
+        margin: 0 8% 10% 8%;  
     }
+
+    
+    
 
     /*------ここからインフォメーションー--------*/
 
     .information {
         width: 100%;
-        height: 256px;
+        height: auto;
         background-color: #fff;
         display: flex;
         flex-direction: column;
-        align-items: center;    
+        align-items: center;
+        padding: 2%;   
+    }
+
+    .information_information{
+        width: 90%;
     }
     .information .title h3{
-        margin-top: 70px;
-        margin-right: 0px;
+        margin-top: 2%;
+        margin-right: 0;
         position: relative;
+        font-size: 10px;
     }
     .information .title h3::after{
         position: absolute;
         content: "";
         top: 50%;
-        width: auto;
+        width: 74%;
         height: 1px;
         background-color: #62534D;
-        margin-left: 20px;
+        margin-left: 2%;
     }
-
+    
     .information_news dl{
-        display: flex;
+        display: block;
+    }
+    .information_news dl dd{
+        margin: 0;
     }
 
     /*------footerー--------*/
     footer{
         width: 100%;
-        height: 140px;
+        height: auto;
         background-color: #F3DEDF;
-        padding-top: 4px;
+        padding: 2%;
     }
     footer .attention{
         margin: 0 20px;
     }
+
     footer ul{
-        display: flex;
-        justify-content: end;
-        
+        display: grid;
+        grid-template-columns: repeat(2, 1fr); 
+        text-align: center;
+        justify-content: center;
+        gap: 0;
+        padding: 0;  
     }
+    
+
     footer ul li{
         list-style: none;
-        margin: 0 20px 0 10px;
+        margin: 0;
         position: relative;
     }
-    footer ul a{
-        text-decoration: none;
-        position: relative;
-    }
+    
+  
     footer ul a::after{
-        position: absolute;
-        content: "";
-        width: 1px;
-        height: 18px;
-        background-color: #62534D;
-        margin-top: -20px;
-        left: -6px; 
-        top: 100%;
-        
+        display: none; 
     }
+    
+    footer ul .beware, footer ul .contact, footer ul .privacy_policy{
+        border-top: 1px solid #62534D;
+        border-bottom: 1px solid #62534D;
+        border-left: 1px solid #62534D;
+        border-right: 1px solid #62534D;
+        padding: 10px 10%;
+    }
+    footer ul .contact{
+        border-left: none;
+    }
+    
+    footer ul .privacy_policy{
+        border-top: none;  
+    }
+   
+    
     footer ul a:first-child::after{
         display: none;
     }
-    footer .copylight p{
-        display: flex;
-        justify-content: end;
-        margin-right: 4px;
+    footer ul a .beware, footer ul a .contact, footer ul a .privacy_policy{
+        position: relative;
+    }
+    footer ul a .beware::after, footer ul a .contact::after, footer ul a .privacy_policy::after{
+        content: ' ';
+        position: absolute;
+        top: 42%;
+        left: 94%;
+        display: block;
+        width: 4px;
+        height: 4px;
+        border: 0px;
+        border-top: solid 1px #62534D;
+        border-right: solid 1px #62534D;
+        transform: rotate(45deg);
+        -ms-transform: rotate(45deg);
+        -webkit-transform: rotate(45deg);
+    }
+    footer a:last-child{
+        grid-column: 1 / 3; 
+    }
+    footer ul a .privacy_policy::after{
+        content: ' ';
+        position: absolute;
+        top: 42%;
+        left: 97%;
+        display: block;
+        width: 4px;
+        height: 4px;
+        border: 0px;
+        border-top: solid 1px #62534D;
+        border-right: solid 1px #62534D;
+        transform: rotate(45deg);
+        -ms-transform: rotate(45deg);
+        -webkit-transform: rotate(45deg);
     }
 
+
+    footer .copylight p{
+        display: flex;
+        justify-content: center;
+        
+    }
+
+   
     /*------白っぽくなるアニメーションー--------*/
 
     .all_items, .blue_light_save, .monthly, #yukos, .instagram, .twitter, .more_contact, .rakuten, .hoteraba, .youtube, .information_news1, .information_news2, .beware, .contact, .privacy_policy{
-        transition: 0.3s;
-        cursor: pointer;
-        user-select: none;
+        animation: none;
+        transition: none;
+        transform: none;
     }
 
     .all_items:hover, .blue_light_save:hover, .monthly:hover, #yukos:hover,
     .instagram:hover, .twitter:hover, .more_contact:hover, .rakuten:hover, .hoteraba:hover, .youtube:hover, .information_news1:hover, .information_news2:hover, .beware:hover, .contact:hover, .privacy_policy:hover{
-        transition: 0.3s; 
-        opacity: 0.6; 
-        transition: 0.6s ease; 
+        animation: none;
+        transition: none;
+        transform: none;
     }
 
     .new_item1_img, .new_item2_img, .item01_img, .item02_img, .item03_img, .item04_img, .item05_img, .item06_img, .item07_img, .item08_img, .item09_img, .item10_img, .item11_img{
-        transition: 0.3s;
+        animation: none;
+        transition: none;
+        transform: none;
     }
 
     .new_item1_img:hover, .new_item2_img:hover,
     .item01_img:hover, .item02_img:hover, .item03_img:hover, .item04_img:hover, .item05_img:hover, .item06_img:hover, .item07_img:hover, .item08_img:hover, .item09_img:hover, .item10_img:hover, .item11_img:hover{
-        transition: 0.3s; 
-        opacity: 0.8; 
-        transition: 0.4s ease; 
+        animation: none;
+        transition: none;
+        transform: none;
+        
     }
     /*------moreアニメーション--------*/
 
     .more:hover{
-        border:none;
-        border: 1px solid #fff;
-        background-color: #fff;
-        transform: scale(1.1);
-        transition: 0.6s;
-        opacity: 1;
+        animation: none;
+        transition: none;
+        transform: none;
     }
 
 }
+    
+    
 
