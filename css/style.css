@@ -69,6 +69,9 @@ header .logo{
     z-index: 9999;
     top: 0;
 }
+#hamburger_menu_sp{
+    display: none;
+}
 
 .head_items ul{  
     display: flex;
@@ -424,8 +427,7 @@ footer ul a::after{
     background-color: #62534D;
     margin-top: -20px;
     left: -6px; 
-    top: 100%;
-    
+    top: 100%; 
 }
 footer ul a:first-child::after{
     display: none;
@@ -476,10 +478,11 @@ footer .copylight p{
 
 /*iPhone*/
 
-@media only screen and (max-width:768px){
+@media only screen and (max-width: 768px){
     h3{
         font-size: 14px;
     }
+
     p, li, dl{
         font-size: 8px;
     }
@@ -515,16 +518,14 @@ footer .copylight p{
 
     .hamburger_btn {
         position: fixed;
-        top: 4%; 
         right: 4%; 
-        width: 7%; 
+        width: 5%; 
         display: flex;
         flex-direction: column;
         justify-content: space-between;
         align-items: flex-start;
-        height: 4%; 
-        z-index: 9999;
-        
+        height: 2%; 
+        z-index: 9999;   
     }
     .hamburger_btn div {
         height: 1px; 
@@ -539,17 +540,14 @@ footer .copylight p{
         align-self: flex-start; 
     }
     
-    #hamburger_menu_sp {
+    #hamburger_menu_sp, #hamburger_menu_sp.close {
         display: block;
         position: fixed;
         background-color: white;
         width: 100%;
-        height: 100%;
+        height: 80%;
         top: 0;
-        right: 0;
         z-index: 99999999;
-        flex-direction: column;
-        align-items: center;
         transition: transform 0.6s ease-in-out, opacity 0.3s ease-in-out;
         transform: translateY(-100%); 
         opacity: 0;
@@ -557,65 +555,160 @@ footer .copylight p{
     
     #hamburger_menu_sp.open {
         opacity: 1; 
-        transform: translateY(0); 
+        transform: translateY(0);   
     }
+    
+    #hamburger_btn_close{
+        display: block;
+        position: relative;
+        width: 100%;
+        height: 28%;
+    }
+    #hamburger_btn_close::before, #hamburger_btn_close::after {
+        content: "";
+        position: absolute;
+        top: 18%;
+        right: 6%;
+        width: 1px; 
+        height: 28%; 
+        background:  #62534D;
+      }
+       
+      #hamburger_btn_close::before {
+        transform: translate(-50%,-50%) rotate(45deg);
+      }
+       
+      #hamburger_btn_close::after {
+        transform: translate(-50%,-50%) rotate(-45deg);
+      }
 
     .head_items{
         display: none;
-        z-index: 9999999999999999;
+        z-index: 99999999999999999999;
+        right: 0;
     }
-    .head_items.open{
+    #head_items.open{
         display: flex;
         flex-direction: column;
         align-items: center;
+        justify-content: center;
+        width: 100%;
+    }
+    #head_list.open{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 0;
+        margin: 10% auto;
     }
 
-    .head_items ul li{
-        list-style: none;
-        margin: 10px 22px;
-        font-size: 14px;
-        letter-spacing: 0.1em;
-        
-    }
-    .head_items ul a{
-        text-decoration: none;
-        color: #62534D;
-    }
     .head_items .sns{
-        margin: 24px 8px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+    }
+    .head_items .sns.open{
+        margin: 0 auto;
+        width: auto;
+    }
+    .head_items .sns.open a{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 -16%;
+    }
+    .head_items .sns.open img{
+        width: 26%;
     }
 
+    .onlne_shop{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+    }
 
     .onlne_official{
-        display: flex;
-        border: 1px solid #62534D;
-        padding: 12px 24px 12px 22px;
-        margin-left: 22px;
-        margin-top: 16px;
+        width: auto; 
+        padding: 1em 6em; 
+        margin: 20px auto; 
+        position: relative;
+    }
+    .onlne_official::after{
+        position: absolute;
+        content: "";
+        top: 50%;
+        right: 10%; 
+        transform: translateY(-50%);      
+        width: 6px;
+        height: 6px;
+        border: 0px;
+        border-bottom: solid 1px #62534D;
+        border-right: solid 1px #62534D;
+        transform: rotate(45deg);
+        -ms-transform: rotate(45deg);
+        -webkit-transform: rotate(45deg); 
     }
     .onlne_official p{
-        margin: 0 8px 0 0;
+        font-size: 12px;
     }
 
     .online_sub{
         display: none;
-        margin-top: -10px;
-    }
-
-    .online_shop:hover {
-        border: 1px solid #62534D;
-        text-align: center;
-        margin-left: 22px;
-        margin-top: 16px;
-    }
-    .online_shop:hover .onlne_official{
-        border: none;
-        margin: 0;
-    }
-    .online_shop:hover .online_sub{
-        display: block;
         
-    } 
+    }
+    @media (hover:none){
+        .online_shop:active{
+            margin: 0;
+            display: block;
+        }
+        
+    
+        .online_shop:active {
+            border: 1px solid #62534D;
+            text-align: center;
+            margin: 20px auto; 
+        }
+        .online_shop:active .onlne_official{
+            border: none;
+            margin: 0;
+        }
+        
+        .online_shop:active .onlne_official::after{
+            position: absolute;
+            content: "";
+            top: 50%;
+            right: 10%; 
+            transform: translateY(-50%);      
+            width: 6px;
+            height: 6px;
+            border: 0px;
+            border-top: solid 1px #62534D;
+            border-left: solid 1px #62534D;
+            transform: rotate(45deg);
+            -ms-transform: rotate(45deg);
+            -webkit-transform: rotate(45deg); 
+        }
+        
+        .online_shop:active .online_sub p{
+            display: block;
+            font-size: 12px;
+            margin: 4% auto;
+            position: relative;
+        } 
+        .online_shop:active .online_sub p::before{
+            border-top: 1px solid #999;
+            position: absolute;
+            content: "";
+            width: 80%;
+            top: -46%;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+    }
+    
 
 
 

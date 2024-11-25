@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" href="css/reset.css"/>
     <link rel="stylesheet" href="css/style.css"/>
-    <meta name="viewport" content="width=device-width"/>
-    <title>Lumos_practice</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lumos_practice</title>
+    
     <script>
         (function(d) {
           var config = {
@@ -17,6 +17,8 @@
           h=d.documentElement,t=setTimeout(function(){h.className=h.className.replace(/\bwf-loading\b/g,"")+" wf-inactive";},config.scriptTimeout),tk=d.createElement("script"),f=false,s=d.getElementsByTagName("script")[0],a;h.className+=" wf-loading";tk.src='https://use.typekit.net/'+config.kitId+'.js';tk.async=true;tk.onload=tk.onreadystatechange=function(){a=this.readyState;if(f||a&&a!="complete"&&a!="loaded")return;f=true;clearTimeout(t);try{Typekit.load(config)}catch(e){}};s.parentNode.insertBefore(tk,s)
         })(document);
       </script>
+      
+      
 
 </head>
 
@@ -247,14 +249,15 @@
         <!--ハンバーガー！ー-->
         
         <section id="hamburger_menu_sp">
+            <div id="hamburger_btn_close" class="hamburger_btn_close"></div>
             <nav id="head_items" class="head_items">
-                <ul class="head_list">
+                <ul id="head_list" class="head_list">
                     <a href="https://chusme.jp/item"><li class="all_items">ALL ITEMS</li></a>
                     <a href="https://chusme.jp/blue_light_save"><li class="blue_light_save">BLUE LIGHT SAVE</li></a>
                     <a href="https://chusme.jp/1month"><li class="monthly">MONTHLY</li></a>
                     <a href="#about_yukos"><li id="yukos">YUKOS</li></a>
                 </ul>
-                <div class="sns">
+                <div id="sns" class="sns">
                     <a href="https://www.instagram.com/yukos0520?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==">
                         <img class="instagram" src="img/instagram.png" alt="Instagram">
                     </a>
@@ -262,8 +265,9 @@
                         <img class="twitter" src="img/twitter.png" alt="Twitter">
                     </a>
                 </div>
-                <div class="online_shop">
-                    <div class="onlne_official">
+                <div id="online_shop" class="online_shop">
+                    <div class="shop_btn"></div>
+                    <div id="online_official" class="onlne_official">
                         <p>ONLINE SHOP</p>
                         <img src="img/cart.png" width="20" height="18" alt="カートのアイコン">
                     </div>
@@ -289,14 +293,18 @@
 
 
                 $('#hamburger_btn').toggleClass('active');
-
-
                 $('#hamburger_menu_sp').toggleClass('open');
                 $('#head_items').toggleClass('open');
-
+                $('#head_list').toggleClass('open');
+                $('#sns').toggleClass('open');
+                
+            
 
 
                 $('body').toggleClass('no-scroll');
+            });
+            $('#hamburger_btn_close').click(function () {
+                $('#hamburger_menu_sp').removeClass('open').addClass('close');
             });
         });
     </script>
