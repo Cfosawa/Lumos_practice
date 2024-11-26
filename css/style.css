@@ -88,41 +88,43 @@ header .logo{
     text-decoration: none;
     color: #62534D;
 }
+
 .head_items .sns{
     margin: 24px 8px;
+}
+
+.online_shop{
+    border: 1px solid #62534D;
+    padding: 12px 40px 12px 40px;
+    margin: 14px auto 12px 22px;
     
 }
 
-
 .onlne_official{
     display: flex;
-    border: 1px solid #62534D;
-    padding: 12px 24px 12px 22px;
-    margin-left: 22px;
-    margin-top: 16px;
+    padding: 0;
 }
 .onlne_official p{
-    margin: 0 8px 0 0;
+    margin: 2px 8px 0 0;
 }
-
 .online_sub{
     display: none;
-    margin-top: -10px;
 }
 
 .online_shop:hover {
     border: 1px solid #62534D;
-    text-align: center;
-    margin-left: 22px;
-    margin-top: 16px;
+    text-align: center; 
 }
+
 .online_shop:hover .onlne_official{
     border: none;
-    margin: 0;
 }
+
 .online_shop:hover .online_sub{
-    display: block;
-    
+    display: block; 
+}
+.online_shop:hover .online_sub p{
+    margin: 20px 0 0 0;
 }
 
 
@@ -136,7 +138,6 @@ header .logo{
     position: relative;
     margin: 0;
     background-size: cover; /* 画面全体にフィット */
-    
 }
 .home img{
     position: absolute;
@@ -484,7 +485,7 @@ footer .copylight p{
     }
 
     p, li, dl{
-        font-size: 8px;
+        font-size: 12px;
     }
     html, body {
         overflow-x: hidden; /* 横スクロールを防止 */
@@ -498,6 +499,7 @@ footer .copylight p{
         margin: 0 auto; /* ページを中央に揃える */
         
     }
+
     
 
     /*------ヘッダー--------*/
@@ -524,7 +526,7 @@ footer .copylight p{
         width: 60px;
         border: 0;
         outline: 0;
-        z-index: 103;
+        z-index: 90;
         display: block;
         box-sizing: border-box;
     }
@@ -553,20 +555,20 @@ footer .copylight p{
         position: absolute;
         content: "";
     }
-    #hamburger_menu_sp.open .hamburger_btn_box{
+    .hamburger_btn_box.open{
         z-index: 300;
         background-color: #fff;
     }
-    #hamburger_menu_sp.open .hamburger_btn{
+    .hamburger_btn_box.open .hamburger_btn{
         background-color: #fff;
-        transition: 1s;
+        transition: 0.4s ease-in;
     }
-    #hamburger_menu_sp.open .hamburger_btn:before{
+    .hamburger_btn_box.open .hamburger_btn:before{
         top: 0;
         transform: rotate(45deg);
         transition: 1s;
     }
-    #hamburger_menu_sp.open .hamburger_btn:after{
+    .hamburger_btn_box.open .hamburger_btn:after{
         transform: rotate(-45deg);
         top: 0;
         transition: 1s;
@@ -586,6 +588,7 @@ footer .copylight p{
     #hamburger_menu_sp.open{
         z-index: 105;
     }
+    
 
     .head_items{
         z-index: 150;
@@ -605,13 +608,12 @@ footer .copylight p{
         top: 0;
     }
     
-
     #head_list.open{
         display: flex;
         flex-direction: column;
         align-items: center;
         padding: 0;
-        margin: 14% auto;
+        margin: 20% auto 14% auto;
     }
 
     .head_items .sns{
@@ -621,7 +623,7 @@ footer .copylight p{
         width: 100%;
     }
     .head_items .sns.open{
-        margin: 0 auto 4% auto;
+        margin: 0 auto;
         width: auto;
     }
     .head_items .sns.open a{
@@ -631,24 +633,96 @@ footer .copylight p{
         margin: 0 -16%;
     }
     .head_items .sns.open img{
-        width: 26%;
+        width: 30%;
     }
 
-    .onlne_shop{
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: 100%;
-    }
 
-    
-    .onlne_official{
+    .online_shop_sp{
+        border: 1px solid #62534D;
         width: auto; 
-        padding: 1em 6em; 
-        margin: 20px auto; 
+        max-height: 100%;
+        padding: 1.2em 6em; 
+        margin: 4% auto 10% auto; 
+        position: relative;
+        transition:    1s ease, padding 1s ease;
+    }
+
+    .online_shop {
+        display: none;
+    }
+    
+
+/* 開いたあとさきに作る！ */
+
+
+
+    .online_shop_sp.open{
+        border: 1px solid #62534D;
+        text-align: center;
+        width: auto; 
+        padding: 1.2em 6em; 
+        margin: 4% auto 10% auto;
+        position: relative; 
+    }
+    
+    .online_shop_sp::after{
+        position: absolute;
+        content: "";
+        top: 1.5em;
+        right: 1.2em;      
+        width: 8px;
+        height: 8px;
+        border: 0px;
+        border-bottom: solid 2px #62534D;
+        border-right: solid 2px #62534D;
+        transform: rotate(45deg);
+        transition: 0.3s ease;
+    }
+    
+    .online_shop_sp.open::after {
+        transform: rotate(225deg); 
+    }
+
+    .online_shop_sp.open .online_sub{
+        display: flex;
+        flex-direction: column;
+    }
+    .online_shop_sp.open .online_sub p{
+        margin: 3em auto 0 auto;
         position: relative;
     }
-    .onlne_official::after{
+    .online_shop_sp.open .online_sub p::before{
+        border-top: 1px solid #bcbcbc;
+        border-radius: 1%;
+        position: absolute;
+        content: "";
+        width: 20em;
+        top: -1.5em;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    
+
+
+    
+    
+
+
+    /* 
+    
+
+.onlne_official{
+    display: flex;
+    padding: 0;
+}
+
+.online_sub{
+    display: none;
+}
+
+
+
+    .onlne_official ::after{
         position: absolute;
         content: "";
         top: 50%;
@@ -663,80 +737,36 @@ footer .copylight p{
         -ms-transform: rotate(45deg);
         -webkit-transform: rotate(45deg); 
     }
-    .onlne_official p{
-        font-size: 12px;
+    .onlne_shop_sp.open .onlne_official::after{
+        transform: rotate(180deg);
+        top: 0;
     }
-
-    .online_sub{
-        display: none;
-        
     
-    }
-    .online_shop:active{
+    .online_shop_sp.open{
         margin: 0;
-        display: block;
     }
-    
 
-    .online_shop:active {
+    .online_shop_sp.open {
         border: 1px solid #62534D;
         text-align: center;
-        margin: 20px auto; 
-    }
-    .online_shop:active .onlne_official{
-        border: none;
-        margin: 0;
+        margin: 20% auto; 
     }
     
-    .online_shop:active .onlne_official::after{
-        position: absolute;
-        content: "";
-        top: 50%;
-        right: 10%; 
-        transform: translateY(-50%);      
-        width: 6px;
-        height: 6px;
-        border: 0px;
-        border-top: solid 1px #62534D;
-        border-left: solid 1px #62534D;
-        transform: rotate(45deg);
-        -ms-transform: rotate(45deg);
-        -webkit-transform: rotate(45deg); 
-    }
-    
-    .online_shop:active .online_sub p{
-        display: block;
-        font-size: 12px;
-        margin: 4% auto;
-        position: relative;
-    } 
-    .online_shop:active .online_sub p::before{
+    .online_shop_sp.open .online_sub p::before{
         border-top: 1px solid #999;
         position: absolute;
         content: "";
         width: 80%;
         top: -46%;
         left: 50%;
-        /* transform: translateX(-50%); */
+        transform: translateX(-50%);
     }
+
     
-    .online_shop:hover {
-        display: none;
-    }
-    .online_shop:hover .onlne_official{
-        border: none;
-        margin: 0;
-    }
-    .online_shop:hover .online_sub{
-        display: block;
-        
-    }
+     */
+     
+
     
-
-
-
-
-
 
     /*------ホーム--------*/
     .home{

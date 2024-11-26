@@ -28,9 +28,6 @@
             <div class="logo">
                 <a href="../Lumos_practice/index.html"><img src="img/logo.png" width="130"  alt="チューズミーロゴ"></a>
             </div>
-            <div id="hamburger_btn_box" class="hamburger_btn_box">
-                <span class="hamburger_btn"></span>
-            </div>
             <nav class="head_items">
                 <ul class="head_list">
                     <a href="https://chusme.jp/item"><li class="all_items">ALL ITEMS</li></a>
@@ -265,16 +262,17 @@
                         <img class="twitter" src="img/twitter.png" alt="Twitter">
                     </a>
                 </div>
-                <div id="online_shop" class="online_shop">
-                    
-                    <div id="online_official" class="onlne_official">
-                        <p>ONLINE SHOP</p>
-                        <img src="img/cart.png" width="20" height="18" alt="カートのアイコン">
-                    </div>
-                    <div class="online_sub">
-                        <p class="more_contact">MORECONTACT</p>
-                        <p class="rakuten">RAKUTEN</p>
-                        <p class="hoteraba">ホテラバ</p>
+                <div id="online_shop_box" class="online_shop_box">
+                    <div id="online_shop_sp" class="online_shop_sp">
+                        <div id="online_official" class="onlne_official">
+                            <p>ONLINE SHOP</p>
+                            <img src="img/cart.png" width="20" height="18" alt="カートのアイコン">
+                        </div>
+                        <div class="online_sub">
+                            <p class="more_contact">MORECONTACT</p>
+                            <p class="rakuten">RAKUTEN</p>
+                            <p class="hoteraba">ホテラバ</p>
+                        </div>
                     </div>
                 </div>
             </nav>
@@ -289,21 +287,22 @@
     <script>
         $(function () {
             $('#hamburger_btn_box').click(function () {
-                $('#hamburger_btn_box').addClass('active');
-                $('#hamburger_menu_sp').addClass('open');
-                $('#head_items').addClass('open');
-                $('#head_list').addClass('open');
-                $('#sns').addClass('open');
+                $(this).toggleClass('active');
+                $('#hamburger_menu_sp').toggleClass('open');
+                $('#hamburger_btn_box').toggleClass('open');
+                $('#head_items').toggleClass('open');
+                $('#head_list').toggleClass('open');
+                $('#sns').toggleClass('open');
+                
                 
             });
-            $('#hamburger_btn_').click(function () {
-                $('#hamburger_btn_').removeClass('active');
-                $('#hamburger_menu_sp').removeClass('open');
-                $('#head_items').removeClass('open');
-                $('#head_list').emoveClass('open');
-                $('#sns').removeClass('open');
-                
+            $('#online_shop_box').click(function () {
+                $(this).toggleClass('active');
+                $('#online_shop_sp').toggleClass('open');
             });
+
+
+            
         });
     </script>
     
