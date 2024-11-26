@@ -506,7 +506,8 @@ footer .copylight p{
         background-color:#F8EFEE;
         display: flex;
         width: 100%;
-        height: 64px;  
+        height: 64px;
+        position: relative;  
     }
     header .logo{
         margin: auto 0;
@@ -516,90 +517,101 @@ footer .copylight p{
     /*-----ハンバーガーメニューの中身--------*/
     
 
-    .hamburger_btn {
-        position: fixed;
-        right: 4%; 
-        width: 5%; 
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        align-items: flex-start;
-        height: 2%; 
-        z-index: 9999;   
+    .hamburger_btn_box{
+        position: absolute;
+        top: 32px;
+        right: 2%;
+        width: 60px;
+        border: 0;
+        outline: 0;
+        z-index: 103;
+        display: block;
+        box-sizing: border-box;
     }
-    .hamburger_btn div {
+
+    .hamburger_btn, .hamburger_btn:before, .hamburger_btn:after {
+        width: 25px; 
         height: 1px; 
         background-color: #62534D;
     }
-    .hamburger_btn_top,
-    .hamburger_btn_bottom {
-        width: 100%; 
+    .hamburger_btn{
+        width: 18px;
+        position: relative;
+        display: block;
+        margin: 0 auto;
     }
-    .hamburger_btn_mid {
-        width: 70%; 
-        align-self: flex-start; 
+    .hamburger_btn:before{
+        width: 34px;
+        top:-10px;
+        position: absolute;
+        content: "";
     }
-    
-    #hamburger_menu_sp, #hamburger_menu_sp.close {
+
+    .hamburger_btn:after {
+        width: 30px;
+        top:10px;
+        position: absolute;
+        content: "";
+    }
+    #hamburger_menu_sp.open .hamburger_btn_box{
+        z-index: 300;
+        background-color: #fff;
+    }
+    #hamburger_menu_sp.open .hamburger_btn{
+        background-color: #fff;
+        transition: 1s;
+    }
+    #hamburger_menu_sp.open .hamburger_btn:before{
+        top: 0;
+        transform: rotate(45deg);
+        transition: 1s;
+    }
+    #hamburger_menu_sp.open .hamburger_btn:after{
+        transform: rotate(-45deg);
+        top: 0;
+        transition: 1s;
+        width: 34px;
+    }
+
+
+
+   
+    #hamburger_menu_sp{
         display: block;
         position: fixed;
-        background-color: white;
-        width: 100%;
-        height: 80%;
         top: 0;
-        z-index: 99999999;
-        transition: transform 0.6s ease-in-out, opacity 0.3s ease-in-out;
-        transform: translateY(-100%); 
-        opacity: 0;
-    }
-    
-    #hamburger_menu_sp.open {
-        opacity: 1; 
-        transform: translateY(0);   
-    }
-    
-    #hamburger_btn_close{
-        display: block;
-        position: relative;
+        left: 0;
         width: 100%;
-        height: 28%;
     }
-    #hamburger_btn_close::before, #hamburger_btn_close::after {
-        content: "";
-        position: absolute;
-        top: 18%;
-        right: 6%;
-        width: 1px; 
-        height: 28%; 
-        background:  #62534D;
-      }
-       
-      #hamburger_btn_close::before {
-        transform: translate(-50%,-50%) rotate(45deg);
-      }
-       
-      #hamburger_btn_close::after {
-        transform: translate(-50%,-50%) rotate(-45deg);
-      }
+    #hamburger_menu_sp.open{
+        z-index: 105;
+    }
 
     .head_items{
-        display: none;
-        z-index: 99999999999999999999;
+        z-index: 150;
         right: 0;
-    }
-    #head_items.open{
+        top: -100%;
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
         width: 100%;
+        transition: 0.4s;
+        background-color: #fff;
+        max-height: 100%;
     }
+
+    #head_items.open{
+        top: 0;
+    }
+    
+
     #head_list.open{
         display: flex;
         flex-direction: column;
         align-items: center;
         padding: 0;
-        margin: 10% auto;
+        margin: 14% auto;
     }
 
     .head_items .sns{
@@ -609,7 +621,7 @@ footer .copylight p{
         width: 100%;
     }
     .head_items .sns.open{
-        margin: 0 auto;
+        margin: 0 auto 4% auto;
         width: auto;
     }
     .head_items .sns.open a{
@@ -629,6 +641,7 @@ footer .copylight p{
         width: 100%;
     }
 
+    
     .onlne_official{
         width: auto; 
         padding: 1em 6em; 
@@ -657,56 +670,66 @@ footer .copylight p{
     .online_sub{
         display: none;
         
-    }
-    @media (hover:none){
-        .online_shop:active{
-            margin: 0;
-            display: block;
-        }
-        
     
-        .online_shop:active {
-            border: 1px solid #62534D;
-            text-align: center;
-            margin: 20px auto; 
-        }
-        .online_shop:active .onlne_official{
-            border: none;
-            margin: 0;
-        }
-        
-        .online_shop:active .onlne_official::after{
-            position: absolute;
-            content: "";
-            top: 50%;
-            right: 10%; 
-            transform: translateY(-50%);      
-            width: 6px;
-            height: 6px;
-            border: 0px;
-            border-top: solid 1px #62534D;
-            border-left: solid 1px #62534D;
-            transform: rotate(45deg);
-            -ms-transform: rotate(45deg);
-            -webkit-transform: rotate(45deg); 
-        }
-        
-        .online_shop:active .online_sub p{
-            display: block;
-            font-size: 12px;
-            margin: 4% auto;
-            position: relative;
-        } 
-        .online_shop:active .online_sub p::before{
-            border-top: 1px solid #999;
-            position: absolute;
-            content: "";
-            width: 80%;
-            top: -46%;
-            left: 50%;
-            transform: translateX(-50%);
-        }
+    }
+    .online_shop:active{
+        margin: 0;
+        display: block;
+    }
+    
 
+    .online_shop:active {
+        border: 1px solid #62534D;
+        text-align: center;
+        margin: 20px auto; 
+    }
+    .online_shop:active .onlne_official{
+        border: none;
+        margin: 0;
+    }
+    
+    .online_shop:active .onlne_official::after{
+        position: absolute;
+        content: "";
+        top: 50%;
+        right: 10%; 
+        transform: translateY(-50%);      
+        width: 6px;
+        height: 6px;
+        border: 0px;
+        border-top: solid 1px #62534D;
+        border-left: solid 1px #62534D;
+        transform: rotate(45deg);
+        -ms-transform: rotate(45deg);
+        -webkit-transform: rotate(45deg); 
+    }
+    
+    .online_shop:active .online_sub p{
+        display: block;
+        font-size: 12px;
+        margin: 4% auto;
+        position: relative;
+    } 
+    .online_shop:active .online_sub p::before{
+        border-top: 1px solid #999;
+        position: absolute;
+        content: "";
+        width: 80%;
+        top: -46%;
+        left: 50%;
+        /* transform: translateX(-50%); */
+    }
+    
+    .online_shop:hover {
+        display: none;
+    }
+    .online_shop:hover .onlne_official{
+        border: none;
+        margin: 0;
+    }
+    .online_shop:hover .online_sub{
+        display: block;
+        
     }
     
 

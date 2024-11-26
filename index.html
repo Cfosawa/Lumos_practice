@@ -28,10 +28,8 @@
             <div class="logo">
                 <a href="../Lumos_practice/index.html"><img src="img/logo.png" width="130"  alt="チューズミーロゴ"></a>
             </div>
-            <div id="hamburger_btn" class="hamburger_btn">
-                <div class="hamburger_btn_top"></div>
-                <div class="hamburger_btn_mid"></div>
-                <div class="hamburger_btn_bottom"></div>
+            <div id="hamburger_btn_box" class="hamburger_btn_box">
+                <span class="hamburger_btn"></span>
             </div>
             <nav class="head_items">
                 <ul class="head_list">
@@ -249,7 +247,9 @@
         <!--ハンバーガー！ー-->
         
         <section id="hamburger_menu_sp">
-            <div id="hamburger_btn_close" class="hamburger_btn_close"></div>
+            <div id="hamburger_btn_box" class="hamburger_btn_box">
+                 <span class="hamburger_btn"></span>
+            </div>
             <nav id="head_items" class="head_items">
                 <ul id="head_list" class="head_list">
                     <a href="https://chusme.jp/item"><li class="all_items">ALL ITEMS</li></a>
@@ -266,7 +266,7 @@
                     </a>
                 </div>
                 <div id="online_shop" class="online_shop">
-                    <div class="shop_btn"></div>
+                    
                     <div id="online_official" class="onlne_official">
                         <p>ONLINE SHOP</p>
                         <img src="img/cart.png" width="20" height="18" alt="カートのアイコン">
@@ -288,23 +288,21 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
         $(function () {
-            $('#hamburger_btn').click(function () {
-                console.log('ハンバーガーボタンがクリックされました');
-
-
-                $('#hamburger_btn').toggleClass('active');
-                $('#hamburger_menu_sp').toggleClass('open');
-                $('#head_items').toggleClass('open');
-                $('#head_list').toggleClass('open');
-                $('#sns').toggleClass('open');
+            $('#hamburger_btn_box').click(function () {
+                $('#hamburger_btn_box').addClass('active');
+                $('#hamburger_menu_sp').addClass('open');
+                $('#head_items').addClass('open');
+                $('#head_list').addClass('open');
+                $('#sns').addClass('open');
                 
-            
-
-
-                $('body').toggleClass('no-scroll');
             });
-            $('#hamburger_btn_close').click(function () {
-                $('#hamburger_menu_sp').removeClass('open').addClass('close');
+            $('#hamburger_btn_').click(function () {
+                $('#hamburger_btn_').removeClass('active');
+                $('#hamburger_menu_sp').removeClass('open');
+                $('#head_items').removeClass('open');
+                $('#head_list').emoveClass('open');
+                $('#sns').removeClass('open');
+                
             });
         });
     </script>
